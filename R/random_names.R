@@ -3,8 +3,10 @@
 #' @param n Number of names needed
 #' @param namelist A name list. Either a character that corresponds to one of
 #' the name lists included in the package or a list with character arrays that
-#' includes custom words to be combined. See \code{\link{?namelists}} for a list
-#' of available name lists.
+#' includes custom words to be combined. Custom word lists can have as many
+#' character vectors as desired. A word from each character list will be chose
+#' randomly. Name of the elements are not used. See \code{\link{?namelists}} for
+#' a list of available name lists.
 #' @param wordsep Character to be used when separating the words
 #' @param alliterate
 #'
