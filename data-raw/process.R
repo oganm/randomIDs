@@ -5,11 +5,11 @@ setwd(here())
 
 namelists = list.files('data-raw/',full.names = TRUE)
 
-namelists = namelists[!grepl('process\\.R',namelists)]
+namelists = namelists[!grepl('\\.R',namelists)]
 
 for (x in namelists){
     listname = basename(x)
-    files = list.files(namelists,full.names = TRUE)
+    files = list.files(x,full.names = TRUE)
 
     names = stringr::str_extract(files,'(?<=_).*')
 
