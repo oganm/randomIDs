@@ -48,4 +48,6 @@ get_random_names = function(n = 1, namelist = 'docker',
         paste0(allPossible[sample(nrow(allPossible),setN,replace = FALSE),] %>%
                    apply(1,paste,collapse = wordsep),suffix)
     }) %>% unlist
+
+    return(names)
 }
