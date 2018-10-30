@@ -1,0 +1,56 @@
+---
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+devtools::load_all()
+```
+
+## randomNames
+
+This is a pakcage for generating random names possibly to replace nameless identifiers
+returned from clustering algorithms 
+
+### Installation
+
+```r
+devtools::install_github('oganm/randomNames')
+```
+
+### Use
+
+Pick an available name list or or make up your own. To see available name lists
+do `?namelists` or
+
+```{r}
+namelists
+```
+
+To generate names simply do 
+
+```{r}
+random_names(10,namelist = 'docker')
+```
+
+If you want edgier names try
+
+```{r}
+random_names(10,namelist = 'xcom2_names')
+```
+
+You can also make your own name lists. Names of the list elements aren't
+important. Random words will be selected from each element in order. Generated
+names are guaranteed to be unique. If the name list doesnt allow enough
+permutations, an integer will be added to the end of the name to ensure unique
+names
+
+```{r}
+mynames = list(first = c('shiny','red','tasty'),
+               second = c('apple','gummy-bear','strawberry'),
+               finally = c('yum','mmm'))
+
+random_names(20,namelist = mynames)
+
+
+```

@@ -15,10 +15,10 @@
 #' @export
 #'
 #' @examples
-#' get_random_names(n=4, namelist = 'docker')
-get_random_names = function(n = 1, namelist = 'docker',
-                            wordsep = '_',
-                            alliterate = FALSE){
+#' random_names(n=4, namelist = 'docker')
+random_names = function(n = 1, namelist = 'docker',
+                        wordsep = '_',
+                        alliterate = FALSE){
     if(is.character(namelist)){
         namelist = teval(namelist, envir = as.environment('package:randomNames'))
     }
