@@ -19,7 +19,7 @@ available_namelists =
       )
 
 insert = c()
-names = c()
+listnames = c()
 
 for (x in namelists){
     listname = basename(x)
@@ -44,7 +44,7 @@ for (x in namelists){
     toInsert = c(toInsert,
                     glue("#'     ",nrow(expand.grid(teval(listname))),' possible combinations'))
     insert = c(insert,toInsert)
-    names = c(names,listname)
+    listnames = c(listnames,listname)
 
 }
 
@@ -54,7 +54,7 @@ available_namelists = c(available_namelists[1:3],
 
 writeLines(available_namelists,'R/available_namelists.R')
 
-namelists = names
+namelists = listnames
 devtools::use_data(namelists,overwrite = TRUE)
 
 devtools::document()
