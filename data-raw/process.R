@@ -11,7 +11,7 @@ for (x in namelists){
     listname = basename(x)
     files = list.files(x,full.names = TRUE)
 
-    names = stringr::str_extract(files,'(?<=_).*')
+    names = stringr::str_extract(basename(files),'(?<=_).*')
 
     teval(glue('{listname}<<-list()'))
 
