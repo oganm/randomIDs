@@ -1,6 +1,7 @@
 #' Get random names
 #'
-#' @param n Number of names needed
+#' @param n Number of names needed. If n is greater than number of possible
+#' word combinations, a number will be added as a suffix.
 #' @param namelist A name list. Either a character that corresponds to one of
 #' the name lists included in the package or a list with character arrays that
 #' includes custom words to be combined. Custom word lists can have as many

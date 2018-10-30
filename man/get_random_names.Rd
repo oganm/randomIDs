@@ -8,7 +8,8 @@ get_random_names(n = 1, namelist = "docker", wordsep = "_",
   alliterate = FALSE)
 }
 \arguments{
-\item{n}{Number of names needed}
+\item{n}{Number of names needed. If n is greater than number of possible
+word combinations, a number will be added as a suffix.}
 
 \item{namelist}{A name list. Either a character that corresponds to one of
 the name lists included in the package or a list with character arrays that
