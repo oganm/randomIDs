@@ -2,24 +2,29 @@ library(dplyr)
 library(googlesheets)
 library(stringr)
 
-docker$left %>% cat(sep='\n',file = 'data-raw/docker/1_left')
-docker$right %>% cat(sep='\n',file = 'data-raw/docker/2_right')
 
-sheet=gs_key('13ClWJBZogkRhz6OTli97pLXKcTiOHlQS4IEgDm0VKXU')
+# sheet=gs_key('13ClWJBZogkRhz6OTli97pLXKcTiOHlQS4IEgDm0VKXU')
 
-sheet =googlesheets::gs_key(x = '13ClWJBZogkRhz6OTli97pLXKcTiOHlQS4IEgDm0VKXU')
+# sheet =googlesheets::gs_key(x = '13ClWJBZogkRhz6OTli97pLXKcTiOHlQS4IEgDm0VKXU')
 
-xcomnames = googlesheets::gs_read(sheet,ws = 2)
-
-
-names = xcomnames %>% unlist %>% unique
+# xcomnames = googlesheets::gs_read(sheet,ws = 2)
+# XComInt = xcomnames %>% unlist %>% unique
 
 
-firstname = names[grepl('FirstOpName',names)] %>% str_extract('(?<=\\=).*')
-secondname = names[grepl('SecondOpName',names)] %>% str_extract('(?<=\\=).*')
+XComInt = readLines('E:/SteamLibrary/steamapps/common/XCOM 2/XComGame/Localization/INT/XComGame.int',
+                    skipNul= TRUE)
 
-firstword = names[grepl('FirstOpWord',names)] %>% str_extract('(?<=\\=).*')
-secondword = names[grepl('SecondOpWord',names)] %>% str_extract('(?<=\\=).*')
+
+
+
+firstname = XComInt[grepl('FirstOpName',XComInt) & !grepl('XGParam',XComInt)] %>%
+    str_extract('(?<=\\=).*')
+secondname = XComInt[grepl('SecondOpName',XComInt) & !grepl('XGParam',XComInt)] %>%
+    str_extract('(?<=\\=).*')
+firstword = XComInt[grepl('FirstOpWord',XComInt) & !grepl('XGParam',XComInt)] %>%
+    str_extract('(?<=\\=).*')
+secondword = XComInt[grepl('SecondOpWord',XComInt)& !grepl('XGParam',XComInt)] %>%
+    str_extract('(?<=\\=).*')
 
 dir.create("data-raw/xcom2_names")
 dir.create("data-raw/xcom2_words")
