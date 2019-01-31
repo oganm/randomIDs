@@ -31,8 +31,8 @@ dir.create("data-raw/xcom2_words")
 
 
 writeLines(firstword,'data-raw/xcom2_words/1_first',sep = '\n')
-writeLines(secondword,'data-raw/xcom2_words/1_second',sep = '\n')
+writeLines(secondword,'data-raw/xcom2_words/2_second',sep = '\n')
 
 
 writeLines(firstname,'data-raw/xcom2_names/1_first',sep = '\n')
-writeLines(secondname,'data-raw/xcom2_names/1_second',sep = '\n')
+writeLines(secondname,'data-raw/xcom2_names/2_second',sep = '\n')
