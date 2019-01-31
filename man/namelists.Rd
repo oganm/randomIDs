@@ -8,6 +8,8 @@
     \item docker: Lists of names used for docker containers. Follows the adjective_surname formula.
     Stolen from \url{https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go}
     23400 possible combinations
+    \item occidental_companies: Company names from the mobile game, occidental heroes
+    2346 possible combinations
     \item xcom2_names: Xcom2 mission names following adjective_noun formula.
     14351 possible combinations
     \item xcom2_words: Xcom2 mission names following noun_noun formula.
