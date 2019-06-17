@@ -20,7 +20,7 @@ random_names = function(n = 1, namelist = 'docker',
                         wordsep = '_',
                         alliterate = FALSE){
     if(is.character(namelist)){
-        namelist = teval(namelist, envir = as.environment('package:randomNames'))
+        namelist = teval(namelist, envir = as.environment('package:randomIDs'))
     }
 
     allPossible = do.call(expand.grid,namelist)
