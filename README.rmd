@@ -15,7 +15,7 @@ returned from clustering algorithms
 ### Installation
 
 ```r
-devtools::install_github('oganm/randomNames')
+devtools::install_github('oganm/randomIDs')
 ```
 
 ### Use
