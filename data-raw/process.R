@@ -35,7 +35,7 @@ for (x in namelists){
         words = readLines(files[i])
         teval(glue('{listname}${names[i]}<<-words'))
     }
-    teval(glue('devtools::use_data({listname},overwrite = TRUE)'))
+    teval(glue('usethis::use_data({listname},overwrite = TRUE)'))
 
     toInsert = readLines(description)
 
@@ -55,6 +55,6 @@ available_namelists = c(available_namelists[1:3],
 writeLines(available_namelists,'R/available_namelists.R')
 
 namelists = listnames
-devtools::use_data(namelists,overwrite = TRUE)
+usethis::use_data(namelists,overwrite = TRUE)
 
 devtools::document()
