@@ -4,8 +4,7 @@
 \alias{random_names}
 \title{Get random names}
 \usage{
-random_names(n = 1, namelist = "docker", wordsep = "_",
-  alliterate = FALSE)
+random_names(n = 1, namelist = "docker", wordsep = "_", alliterate = FALSE)
 }
 \arguments{
 \item{n}{Number of names needed. If n is greater than number of possible
